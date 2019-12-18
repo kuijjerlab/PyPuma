@@ -45,14 +45,14 @@ The prior gene regulatory network W is then updated using the responsibility and
 Next, the protein cooperativity and gene co-regulatory networks are updated:
 
 <img src="img/cooperativity.png" height="100">  
-<img src="/img/co-regulatory.png" height="30">,
+<img src="/img/co-regulatory.png" height="30">
 
-while self-interactions in P and C are updated to satisfy convergence:
+, while self-interactions in P and C are updated to satisfy convergence:
 
 <img src="img/p.png" height="30">  
-<img src="/img/c.png" height="30">,
+<img src="/img/c.png" height="30">
 
-which is evaluated using a hamming distance:
+, which is evaluated using a hamming distance:
 
 <img src="img/hamming.png" height="52">.
 
