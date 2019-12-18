@@ -25,8 +25,6 @@ Original PANDA C++ code: [http://sourceforge.net/projects/panda-net/](http://sou
 * **[LIONESS](https://www.sciencedirect.com/science/article/pii/S2589004219300872)** (Linear Interpolation to Obtain Network Estimates for Single Samples)
 _Kuijjer ML, Tung M, Yuan GC, Quackenbush J, Glass K. Estimating sample-specific regulatory networks, iScience, 2019 Apr 26;14:226-240_
 
-LIONESS can be used to estimate single-sample networks using aggregate networks made with any network reconstruction algorithm.
-
 ## Puma algorithm
 <img src="img/puma.png" height="300">  
 
