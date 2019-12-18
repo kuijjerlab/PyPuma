@@ -26,9 +26,11 @@ Original PANDA C++ code: [http://sourceforge.net/projects/panda-net/](http://sou
 _Kuijjer ML, Tung M, Yuan GC, Quackenbush J, Glass K. Estimating sample-specific regulatory networks, iScience, 2019 Apr 26;14:226-240_
 
 ## The PUMA algorithm
+PUMA starts with a prior network of putative regulatory interactions (center network in the image below), a prior network of protein-protein interactions between transcription factors (optional input), and target gene expression data, which is converted into a co-expression network.
+
 <img src="img/puma.png" height="300">  
 
-To find agreement between the three input networks, the responsibility (R) is calculated:
+A message passing framework is used to find agreement between the three input networks. First, the responsibility (R) is calculated:
 
 <img src="img/responsibility.png" height="30"> ,
 
