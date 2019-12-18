@@ -20,16 +20,16 @@ Figure
 
 ## Links to literature 
 
-* **[PUMA](https://static-content.springer.com/esm/art%3A10.1186%2Fs13045-017-0465-4/MediaObjects/13045_2017_465_MOESM3_ESM.pdf)** (PANDA Using MicroRNA Associations)  
-_Manuscript in preparation, used in [PUMA](https://static-content.springer.com/esm/art%3A10.1186%2Fs13045-017-0465-4/MediaObjects/13045_2017_465_MOESM3_ESM.pdf)._  
+* **[PUMA]** (PANDA Using MicroRNA Associations)  
+_Manuscript in preparation, used in [Hill et al.](https://jhoonline.biomedcentral.com/articles/10.1186/s13045-017-0465-4)._  
 C and MATLAB code: [https://github.com/mararie/PUMA](https://github.com/mararie/PUMA)
 
-* **[PANDA](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0064832)** Passing Attributes between Networks for Data Assimilation  
+* **[PANDA](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0064832)** (Passing Attributes between Networks for Data Assimilation)
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_  
 Original PANDA C++ code: [http://sourceforge.net/projects/panda-net/](http://sourceforge.net/projects/panda-net/).  
 
 * **[LIONESS](https://www.sciencedirect.com/science/article/pii/S2589004219300872)** (Linear Interpolation to Obtain Network Estimates for Single Samples)
-_Marieke Lydia Kuijjer, Matthew Tung,GuoCheng Yuan,John Quackenbush, Kimberly Glass. Estimating sample-specific regulatory networks_  
+_Kuijjer ML, Tung M, Yuan GC, Quackenbush J, Glass K. Estimating sample-specific regulatory networks, iScience, 2019 Apr 26;14:226-240_
 
 LIONESS can be used to estimate single-sample networks using aggregate networks made with any network reconstruction algorithm.
 
@@ -60,11 +60,11 @@ P and C are updated to satisfy convergence.
 
 Hamming distance is calculated every iteration.  
 
-<img src="img/hamming.png" height="40">  
+<img src="img/hamming.png" height="40">
 
 
 ## Installation
-PyPanda runs on Python 3.6. You can either run the pypanda script directly (see [Usage](#usage)) or install it on your system. We recommend the following commands to install pypandas on UNIX systems:
+PyPuma runs on Python 3.6. You can either run the PyPuma script directly (see [Usage](#usage)) or install it on your system. We recommend the following commands to install PyPuma on UNIX systems:
 #### Using  a virtual environment
 Using [python virtual environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/) is the cleanest installation method. 
 
@@ -74,18 +74,18 @@ pip install --user pipenv   #Make sure you have pipenv
 git clone https://github.com/aless80/PyPuma.git
 cd PyPuma
 ```
-Creating a virtual environment and installing pypanda:
+Creating a virtual environment and installing PyPuma:
 ```no-highlight
 virtualenv pypumaenv #virtual environment created in a folder inside the git folder 
 source pypumaenv/bin/activate
 (pypumaenv)$ pip install -r requirements.txt
 (pypumaenv)$ python setup.py install --record files.txt
 ```
-Uninstall pypanda from virtual environment:
+Uninstall PyPuma from virtual environment:
 ```no-highlight
 cat files.txt | xargs rm -rf
 ```
-Complete removal of virtual environment and pypanda:
+Complete removal of virtual environment and PyPuma:
 ```no-highlight
 (pypuma)$ deactivate	#Quit virtual environment
 rm -rf pypumaenv
