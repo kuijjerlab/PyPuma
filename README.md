@@ -14,7 +14,7 @@ Python implementation of the PUMA algorithm.
 
 ## Links to literature 
 
-* **[PUMA]** (PANDA Using MicroRNA Associations)  
+* **PUMA** (PANDA Using MicroRNA Associations)  
 _Manuscript in preparation, used in [Hill et al.](https://jhoonline.biomedcentral.com/articles/10.1186/s13045-017-0465-4)._  
 C and MATLAB code: [https://github.com/mararie/PUMA](https://github.com/mararie/PUMA)
 
