@@ -1,11 +1,5 @@
 ## Description
-Python implementation of the PUMA algorithm. The Python code was originally based on the PANDA implementations PyPanda from [https://github.com/QuackenbushLab/pypanda](https://github.com/QuackenbushLab/pypanda) and [https://github.com/davidvi/pypanda](https://github.com/davidvi/pypanda).  
-
-<!--## TODO
-Review formulas  
-Review Results on the bottom of this README  
-Figure
--->
+Python implementation of the PUMA algorithm.
 
 ## Table of Contents
 * [Links to literature](#links-to-literature)
@@ -36,31 +30,31 @@ LIONESS can be used to estimate single-sample networks using aggregate networks 
 ## Puma algorithm
 <img src="img/puma.png" height="300">  
 
-To find agreement between the three input networks first the responsibility (R) is calculated.  
+To find agreement between the three input networks, the responsibility (R) is calculated:
 
 <img src="img/responsibility.png" height="30">  
 
-Thereafter availability (A) is calculated.  
+As well as the availability (A):
 
 <img src="img/availability.png" height="30">  
 
-Availability and responsibility are combined with the following formula.  
+The prior gene regulatory network W is then updated using the responsibility and availability:
 
 <img src="img/combine.png" height="30">  
 
-Protein cooperativity and gene co-regulatory networks are updated.
+Next, the protein cooperativity and gene co-regulatory networks are updated:
 
 <img src="img/cooperativity.png" height="30">  
 <img src="/img/co-regulatory.png" height="30">  
 
-P and C are updated to satisfy convergence.  
+P and C are updated to satisfy convergence:
 
 <img src="img/p.png" height="30">  
 <img src="/img/c.png" height="30">  
 
-Hamming distance is calculated every iteration.  
+which is evaluated using a hamming distance:
 
-<img src="img/hamming.png" height="40">
+<img src="img/hamming.png" height="40">.
 
 
 ## Installation
