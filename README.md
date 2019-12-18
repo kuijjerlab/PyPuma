@@ -44,7 +44,7 @@ The prior gene regulatory network W is then updated using the responsibility and
 
 Next, the protein cooperativity and gene co-regulatory networks are updated:
 
-<img src="img/cooperativity.png" height="30">  
+<img src="img/cooperativity.png" height="100">  
 <img src="/img/co-regulatory.png" height="30">  
 
 P and C are updated to satisfy convergence:
