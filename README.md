@@ -25,38 +25,38 @@ Original PANDA C++ code: [http://sourceforge.net/projects/panda-net/](http://sou
 * **[LIONESS](https://www.sciencedirect.com/science/article/pii/S2589004219300872)** (Linear Interpolation to Obtain Network Estimates for Single Samples)
 _Kuijjer ML, Tung M, Yuan GC, Quackenbush J, Glass K. Estimating sample-specific regulatory networks, iScience, 2019 Apr 26;14:226-240_
 
-## Puma algorithm
+## The PUMA algorithm
 <img src="img/puma.png" height="300">  
 
 To find agreement between the three input networks, the responsibility (R) is calculated:
 
-<img src="img/responsibility.png" height="30">  
+<img src="img/responsibility.png" height="30"> ,
 
-As well as the availability (A):
+as well as the availability (A):
 
-<img src="img/availability.png" height="30">  
+<img src="img/availability.png" height="30">.
 
 The prior gene regulatory network W is then updated using the responsibility and availability:
 
-<img src="img/combine.png" height="30">  
+<img src="img/combine.png" height="30">.
 
 Next, the protein cooperativity and gene co-regulatory networks are updated:
 
 <img src="img/cooperativity.png" height="100">  
-<img src="/img/co-regulatory.png" height="30">  
+<img src="/img/co-regulatory.png" height="30">,
 
-P and C are updated to satisfy convergence:
+while self-interactions in P and C are updated to satisfy convergence:
 
 <img src="img/p.png" height="30">  
-<img src="/img/c.png" height="30">  
+<img src="/img/c.png" height="30">,
 
 which is evaluated using a hamming distance:
 
-<img src="img/hamming.png" height="40">.
+<img src="img/hamming.png" height="52">.
 
 
 ## Installation
-PyPuma runs on Python 3.6. You can either run the PyPuma script directly (see [Usage](#usage)) or install it on your system. We recommend the following commands to install PyPuma on UNIX systems:
+PyPuma runs on Python 3.x. You can either run the PyPuma script directly (see [Usage](#usage)) or install it on your system. We recommend the following commands to install PyPuma on UNIX systems:
 #### Using  a virtual environment
 Using [python virtual environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/) is the cleanest installation method. 
 
@@ -95,7 +95,7 @@ chmod +x PyPuma
 echo "$(pwd):PATH" >> ~/.bashrc
 source ~/.bashrc
 ```
-To run PyPuma from Windows (not fully tested) install Git (https://git-scm.com/downloads) and Anaconda Python2.7 (https://www.continuum.io/downloads) and from the Anaconda prompt run:
+To run PyPuma from Windows (not fully tested) install Git (https://git-scm.com/downloads) and Anaconda (https://www.continuum.io/downloads) and from the Anaconda prompt run:
 ```no-highlight
 git clone https://github.com/aless80/PyPuma.git
 cd PyPuma
@@ -115,16 +115,17 @@ PyPuma can be run directly from the terminal with the following options:
 -r, --rm_missing
 -q, --lioness: output for Lioness single sample networks 
 ```
-To run PyPuma on toy data:
+To run PyPuma on the included Toy example:
 ```
-python run_puma.py -e ./ToyData/ToyExpressionData.txt -m ./ToyData/ToyMotifData.txt -p ./ToyData/ToyPPIData.txt -i ToyData/ToyMiRList.txt -o output_puma.txt -i ./ToyData/ToyMiRList.txt -i ToyData/ToyMiRList.txt
+python run_puma.py -e ./ToyData/ToyExpressionData.txt -m ./ToyData/ToyMotifData.txt -p ./ToyData/ToyPPIData.txt -i ToyData/ToyMiRList.txt -o output_puma.txt
 ```
-
-To reconstruct a single sample Lioness Pearson correlation network (this can take some time):
+To run LIONESS on PUMA networks, use the flag -q (note that this can take a long time and use considerable computing resources):
 
 ```python
 python run_puma.py -e ./ToyData/ToyExpressionData.txt -m ./ToyData/ToyMotifData.txt -p ./ToyData/ToyPPIData.txt -i ToyData/ToyMiRList.txt -o output_puma.txt -q output_lioness.txt
 ```
+Finally, note that running PUMA without importing motif and expression data will estimate a co-expression network using Pearson correlation.
+
 #### Run from python
 Fire up your python shell or ipython notebook. 
 Import the classes in the PyPuma library:
@@ -132,7 +133,7 @@ Import the classes in the PyPuma library:
 from pypuma.puma import Puma
 from pypuma.lioness import Lioness
 ```
-Run the Puma algorithm, leave out motif and PPI data to use Pearson correlation network:
+Then run PUMA:
 ```python
 puma_obj = Puma('ToyData/ToyExpressionData.txt', 'ToyData/ToyMotifData.txt', 'ToyData/ToyPPIData.txt','ToyData/ToyMiRList.txt')
 ```
@@ -140,7 +141,7 @@ Save the results:
 ```python
 puma_obj.save_puma_results('Toy_Puma.pairs.txt')
 ```
-Return a network plot:
+Example of returning a network visualization of the top edges:
 
 ```python
 puma_obj.top_network_plot(top=70, file='top_genes.png')
@@ -161,15 +162,15 @@ Calculate outdegrees for further analysis:
 ```python
 outdegree = puma_obj.return_puma_outdegree()
 ```
-Run the Lioness algorithm for single sample networks:
+Run the LIONESS algorithm for single sample networks:
 ```python
 lioness_obj = Lioness(puma_obj)
 ```
-Save Lioness results:
+Save LIONESS results:
 ```python
 lioness_obj.save_lioness_results('Toy_Lioness.txt')
 ```
-Return a network plot for one of the Lioness single sample networks:
+Return a network plot for one of the LIONESS single sample networks:
 ```python
 plot = AnalyzeLioness(lioness_obj)
 plot.top_network_plot(column= 0, top=100, file='top_100_genes.png')
