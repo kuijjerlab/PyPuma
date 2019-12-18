@@ -1,5 +1,5 @@
 ## Description
-Implementation of the Puma algorithm. Python code based on the Panda implementation pypanda from [https://github.com/QuackenbushLab/pypanda](https://github.com/QuackenbushLab/pypanda) and [https://github.com/davidvi/pypanda](https://github.com/davidvi/pypanda).  
+Python implementation of the PUMA algorithm. The Python code was originally based on the PANDA implementations PyPanda from [https://github.com/QuackenbushLab/pypanda](https://github.com/QuackenbushLab/pypanda) and [https://github.com/davidvi/pypanda](https://github.com/davidvi/pypanda).  
 
 <!--## TODO
 Review formulas  
@@ -28,10 +28,10 @@ C and MATLAB code: [https://github.com/mararie/PUMA](https://github.com/mararie/
 _Glass K, Huttenhower C, Quackenbush J, Yuan GC. Passing Messages Between Biological Networks to Refine Predicted Interactions, PLoS One, 2013 May 31;8(5):e64832_  
 Original PANDA C++ code: [http://sourceforge.net/projects/panda-net/](http://sourceforge.net/projects/panda-net/).  
 
-* **[LIONESS](https://arxiv.org/abs/1505.06440)** (Linear Interpolation to Obtain Network Estimates for Single Samples)   
+* **[LIONESS](https://www.sciencedirect.com/science/article/pii/S2589004219300872)** (Linear Interpolation to Obtain Network Estimates for Single Samples)
 _Marieke Lydia Kuijjer, Matthew Tung,GuoCheng Yuan,John Quackenbush, Kimberly Glass. Estimating sample-specific regulatory networks_  
 
-LIONESS can be used to estimate single-sample networks using aggregate networks made with any network reconstruction algorithm (http://arxiv.org/pdf/1505.06440.pdf).
+LIONESS can be used to estimate single-sample networks using aggregate networks made with any network reconstruction algorithm.
 
 ## Puma algorithm
 <img src="img/puma.png" height="300">  
@@ -48,7 +48,7 @@ Availability and responsibility are combined with the following formula.
 
 <img src="img/combine.png" height="30">  
 
-Protein cooperativity and gene co-regulatory networks are updated.  
+Protein cooperativity and gene co-regulatory networks are updated.
 
 <img src="img/cooperativity.png" height="30">  
 <img src="/img/co-regulatory.png" height="30">  
@@ -64,7 +64,7 @@ Hamming distance is calculated every iteration.
 
 
 ## Installation
-PyPanda runs on Python 2.7. You can either run the pypanda script directly (see [Usage](#usage)) or install it on your system. We recommend the following commands to install pypandas on UNIX systems:
+PyPanda runs on Python 3.6. You can either run the pypanda script directly (see [Usage](#usage)) or install it on your system. We recommend the following commands to install pypandas on UNIX systems:
 #### Using  a virtual environment
 Using [python virtual environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/) is the cleanest installation method. 
 
